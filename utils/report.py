@@ -31,7 +31,7 @@ def _top_issues(df, n=6):
         out.append(f"{r['Parameter']}: {r['Customer Spec']} vs {r['Engineering Spec']} → {r['Status']} (Risk: {r['Risk']})")
     return out
 
-def build_executive_pdf(result_df, project="Project", client="Client", reviewer="Reviewer"):
+def make_executive_pdf(result_df, project="Project", client="Client", reviewer="Reviewer"):
     # KPIs
     total = len(result_df)
     crit = (result_df["Criticality"]=="Critical").sum()
